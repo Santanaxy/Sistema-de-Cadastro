@@ -1,96 +1,28 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <title>Sistema de Cadastro de Funcionários</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f4f4f4;
-      margin: 0;
-      padding: 20px;
-    }
-    .container {
-      max-width: 600px;
-      background: white;
-      padding: 30px;
-      margin: auto;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-    h2 {
-      text-align: center;
-      color: #333;
-    }
-    input, button {
-      padding: 10px;
-      margin: 10px 0;
-      width: 100%;
-    }
-    ul {
-      list-style-type: none;
-      padding: 0;
-    }
-    li {
-      margin: 5px 0;
-      background: #eee;
-      padding: 10px;
-      display: flex;
-      justify-content: space-between;
-    }
-    .remove-btn {
-      background-color: red;
-      color: white;
-      border: none;
-      cursor: pointer;
-      padding: 5px 10px;
-    }
-  </style>
-</head>
-<body>
-  <div class="container">
-    <h2>Cadastro de Funcionários</h2>
-    <input type="text" id="nomeInput" placeholder="Digite o nome do funcionário">
-    <button onclick="cadastrar()">Cadastrar</button>
+<h1>📋 Sistema de Registro de Funcionários</h1>
 
-    <h3>Lista de Funcionários:</h3>
-    <ul id="listaFuncionarios"></ul>
-  </div>
+Este projeto é um sistema simples de cadastro de funcionários desenvolvido em Python. Ele permite ao usuário registrar, listar e excluir nomes de uma lista de forma interativa através de um menu no terminal.
 
-  <script>
-    const cadastro = [];
+<h1>💡 Funcionalidades</h1>
+✅ Cadastrar novos funcionários
 
-    function cadastrar() {
-      const nome = document.getElementById("nomeInput").value.trim();
-      if (nome === "") {
-        alert("Digite um nome válido!");
-        return;
-      }
+📄 Listar funcionários cadastrados
 
-      cadastro.push(nome);
-      document.getElementById("nomeInput").value = "";
-      atualizarLista();
-    }
+❌ Excluir um funcionário pelo nome
 
-    function remover(nome) {
-      const index = cadastro.indexOf(nome);
-      if (index !== -1) {
-        cadastro.splice(index, 1);
-        atualizarLista();
-      }
-    }
+🚪 Sair do sistema
 
-    function atualizarLista() {
-      const lista = document.getElementById("listaFuncionarios");
-      lista.innerHTML = "";
+<h1>🧩 Como funciona</h1>
+O sistema roda em um loop contínuo até que o usuário escolha a opção de sair. As ações disponíveis são:
 
-      cadastro.forEach(nome => {
-        const li = document.createElement("li");
-        li.innerHTML = `${nome} <button class="remove-btn" onclick="remover('${nome}')">Excluir</button>`;
-        lista.appendChild(li);
-      });
-    }
-  </script>
-</body>
-</html>
+Cadastrar Pessoa: Adiciona um novo nome à lista de funcionários.
+
+Listar Pessoa: Exibe todos os nomes cadastrados.
+
+Excluir Pessoa: Remove um nome da lista, caso exista.
+
+Sair: Encerra o programa.
+
+<h1>▶️ Executando o código</h1>
+
+Certifique-se de ter o Python instalado em seu computador. Para rodar o sistema, execute o script diretamente pelo terminal:
 
